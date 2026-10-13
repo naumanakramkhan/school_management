@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Dashboard Form View -->
+    <record id="view_dashboard_form" model="ir.ui.view">
+        <field name="name">school.dashboard.form</field>
+        <field name="model">school.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Future Scholars Academy Dashboard" create="false" edit="false" delete="false">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <i class="fa fa-dashboard"/> Future Scholars Academy Dashboard
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group string="📚 Student Statistics">
+                            <field name="total_students" readonly="1"/>
+                            <field name="male_students" readonly="1"/>
+                            <field name="female_students" readonly="1"/>
+                        </group>
+                        <group string="👨‍🏫 Teacher Statistics">
+                            <field name="total_teachers" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="🏫 Class Statistics">
+                            <field name="total_classes" readonly="1"/>
+                            <field name="active_classes" readonly="1"/>
+                        </group>
+                        <group string="📅 Attendance Statistics">
+                            <field name="total_attendance_records" readonly="1"/>
+                            <field name="present_today" readonly="1"/>
+                            <field name="absent_today" readonly="1"/>
+                            <label for="attendance_rate"/>
+                            <div>
+                                <field name="attendance_rate" readonly="1" class="oe_inline"/> %
+                            </div>
+                        </group>
+                    </group>
+
+                    <group>
+                        <group string="💰 Finance Statistics">
+                            <field name="total_fee_submitted" readonly="1" widget="monetary"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Dashboard Kanban View -->
+    <record id="view_dashboard_kanban" model="ir.ui.view">
+        <field name="name">school.dashboard.kanban</field>
+        <field name="model">school.dashboard</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_dashboard o_school_dashboard" create="false" edit="false" delete="false">
+                <field name="total_students"/>
+                <field name="male_students"/>
+                <field name="female_students"/>
+                <field name="total_teachers"/>
+                <field name="total_classes"/>
+                <field name="active_classes"/>
+                <field name="total_attendance_records"/>
+                <field name="present_today"/>
+                <field name="absent_today"/>
+                <field name="attendance_rate"/>
+                <field name="total_fee_submitted"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="o_kanban_record d-block w-100" style="max-width: 100% !important;">
+                            <style>
+                                .o_school_dashboard .o_kanban_record {
+                                    max-width: 100% !important;
+                                    width: 100% !important;
+                                    margin: 0 !important;
+                                }
+                                .o_school_dashboard .o_kanban_view {
+                                    padding: 0 !important;
+                                }
+                            </style>
+
+                            <div class="container-fluid px-4 py-3">
+                                <div class="row mb-4">
+                                    <div class="col-12">
+                                        <h3><i class="fa fa-dashboard"/> Future Scholars Academy Dashboard</h3>
+                                        <hr/>
+                                    </div>
+                                </div>
+
+                                <!-- First Row: Main Stats -->
+                                <div class="row mb-4">
+                                    <!-- Students Card -->
+                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                                        <a name="%(action_student)d" type="action" class="d-block text-decoration-none">
+                                            <div class="card bg-primary text-white shadow h-100">
+                                                <div class="card-body text-center py-4">
+                                                    <i class="fa fa-users fa-3x mb-3" title="Students"/>
+                                                    <h2 class="mb-2"><field name="total_students"/></h2>
+                                                    <h5 class="mb-3">Students</h5>
+                                                    <div class="border-top border-white pt-3">
+                                                        <small>Male: <field name="male_students"/> | Female: <field name="female_students"/></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Teachers Card -->
+                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                                        <a name="%(action_teacher)d" type="action" class="d-block text-decoration-none">
+                                            <div class="card bg-info text-white shadow h-100">
+                                                <div class="card-body text-center py-4">
+                                                    <i class="fa fa-user-md fa-3x mb-3" title="Teachers"/>
+                                                    <h2 class="mb-2"><field name="total_teachers"/></h2>
+                                                    <h5 class="mb-3">Teachers</h5>
+                                                    <div class="border-top border-white pt-3">
+                                                        <small class="invisible">Placeholder</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Classes Card -->
+                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                                        <a name="%(action_school_class)d" type="action" class="d-block text-decoration-none">
+                                            <div class="card bg-secondary text-white shadow h-100">
+                                                <div class="card-body text-center py-4">
+                                                    <i class="fa fa-university fa-3x mb-3" title="Classes"/>
+                                                    <h2 class="mb-2"><field name="total_classes"/></h2>
+                                                    <h5 class="mb-3">Classes</h5>
+                                                    <div class="border-top border-white pt-3">
+                                                        <small>Active: <field name="active_classes"/></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <!-- Attendance Card -->
+                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                                        <a name="%(action_attendance)d" type="action" class="d-block text-decoration-none">
+                                            <div class="card bg-warning text-white shadow h-100">
+                                                <div class="card-body text-center py-4">
+                                                    <i class="fa fa-calendar-check-o fa-3x mb-3" title="Attendance"/>
+                                                    <h2 class="mb-2"><field name="present_today"/></h2>
+                                                    <h5 class="mb-3">Present Today</h5>
+                                                    <div class="border-top border-white pt-3">
+                                                        <small>Absent: <field name="absent_today"/> | Rate: <t t-esc="Math.round(record.attendance_rate.raw_value)"/>%</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Second Row: Finance / Fee Stats -->
+                                <div class="row mb-4">
+                                    <!-- Fee Submitted Card (Static Card) -->
+                                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+                                        <div class="card bg-success text-white shadow h-100">
+                                            <div class="card-body text-center py-4">
+                                                <i class="fa fa-money fa-3x mb-3" title="Fee Submitted"/>
+                                                <h2 class="mb-2"><field name="total_fee_submitted"/></h2>
+                                                <h5 class="mb-0">Fee Submitted</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Top Root Menu Item (Heading & App Icon) -->
+    <menuitem id="menu_school_root"
+              name="Future Scholars Academy"
+              web_icon="school_management,static/description/logo.png"
+              sequence="10"/>
+
+    <!-- Dashboard Action -->
+    <record id="action_dashboard" model="ir.actions.act_window">
+        <field name="name">Future Scholars Academy Dashboard</field>
+        <field name="res_model">school.dashboard</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Future Scholars Academy Dashboard
+            </p>
+            <p>
+                View all school statistics at a glance.
+            </p>
+        </field>
+    </record>
+
+    <!-- Dashboard Menu Item -->
+    <menuitem id="menu_school_dashboard"
+              name="Dashboard"
+              parent="menu_school_root"
+              action="action_dashboard"
+              sequence="1"/>
+
+    <!-- Reports Menu -->
+    <menuitem id="menu_school_reports"
+              name="Reports"
+              parent="menu_school_root"
+              sequence="70"/>
+
+    <!-- Student Report Action -->
+    <record id="action_student_report" model="ir.actions.act_window">
+        <field name="name">Student Report</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,graph,pivot,form</field>
+        <field name="domain">[('is_student', '=', True)]</field>
+        <field name="context">{'default_is_student': True, 'search_default_group_by_gender': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No students found
+            </p>
+            <p>
+                Student statistics and analysis will appear here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_student_report"
+              name="Student Report"
+              parent="menu_school_reports"
+              action="action_student_report"
+              sequence="10"/>
+
+    <!-- Attendance Report Action -->
+    <record id="action_attendance_report" model="ir.actions.act_window">
+        <field name="name">Attendance Report</field>
+        <field name="res_model">school.attendance</field>
+        <field name="view_mode">pivot,graph,tree,calendar,form</field>
+        <field name="context">{'search_default_this_month': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No attendance records found
+            </p>
+            <p>
+                Attendance statistics and trends will appear here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_attendance_report"
+              name="Attendance Report"
+              parent="menu_school_reports"
+              action="action_attendance_report"
+              sequence="20"/>
+
+    <!-- Grade Report Action -->
+    <record id="action_grade_report" model="ir.actions.act_window">
+        <field name="name">Grade Report</field>
+        <field name="res_model">school.grade</field>
+        <field name="view_mode">pivot,graph,tree,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No grades found
+            </p>
+            <p>
+                Grade statistics and performance analysis will appear here.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_grade_report"
+              name="Grade Report"
+              parent="menu_school_reports"
+              action="action_grade_report"
+              sequence="30"/>
+</odoo>

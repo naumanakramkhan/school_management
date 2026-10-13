@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Create Default Dashboard Record -->
+        <record id="default_dashboard" model="school.dashboard">
+            <field name="name">Future Scholars Academy Dashboard</field>
+        </record>
+    </data>
+</odoo>

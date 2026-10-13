@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_attendance_wizard_form" model="ir.ui.view">
+        <field name="name">school.attendance.wizard.form</field>
+        <field name="model">school.attendance.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Take Attendance">
+                <group>
+                    <group>
+                        <field name="class_id"/>
+                        <field name="course_id" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="date"/>
+                        <field name="class_course_ids" invisible="1"/>
+                    </group>
+                </group>
+                <div class="mb-2">
+                    <button name="action_mark_all" type="object" string="All Present"
+                            class="btn btn-secondary" context="{'mark_status': 'present'}"/>
+                    <button name="action_mark_all" type="object" string="All Absent"
+                            class="btn btn-secondary ms-2" context="{'mark_status': 'absent'}"/>
+                </div>
+                <field name="line_ids">
+                    <tree editable="bottom" create="false"
+                          decoration-danger="status == 'absent'"
+                          decoration-warning="status == 'late'"
+                          decoration-info="status == 'excused'">
+                        <field name="student_id" readonly="1" force_save="1"/>
+                        <field name="status"/>
+                        <field name="remarks"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button name="action_create_attendance" string="Create Attendance"
+                            type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

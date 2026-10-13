@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Grade Tree View -->
+    <record id="view_grade_tree" model="ir.ui.view">
+        <field name="name">school.grade.tree</field>
+        <field name="model">school.grade</field>
+        <field name="arch" type="xml">
+            <tree string="Grades" decoration-success="status=='pass'" decoration-danger="status=='fail'">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="student_id"/>
+                <field name="course_id"/>
+                <field name="exam_type"/>
+                <field name="obtained_score"/>
+                <field name="max_score"/>
+                <field name="percentage" string="Percentage (%)"/>
+                <field name="grade"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Grade Form View -->
+    <record id="view_grade_form" model="ir.ui.view">
+        <field name="name">school.grade.form</field>
+        <field name="model">school.grade</field>
+        <field name="arch" type="xml">
+            <form string="Grade">
+                <header>
+                    <field name="status" widget="statusbar" statusbar_visible="pass,fail"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="student_id" options="{'no_create': True}"/>
+                            <field name="course_id" options="{'no_create': True}"/>
+                            <field name="teacher_id"/>
+                        </group>
+                        <group>
+                            <field name="exam_type"/>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="max_score"/>
+                            <field name="obtained_score"/>
+                        </group>
+                        <group>
+                            <label for="percentage"/>
+                            <div>
+                                <field name="percentage" class="oe_inline"/> %
+                            </div>
+                            <field name="grade"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="remarks" placeholder="Add any remarks or comments..."/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Grade Pivot View -->
+    <record id="view_grade_pivot" model="ir.ui.view">
+        <field name="name">school.grade.pivot</field>
+        <field name="model">school.grade</field>
+        <field name="arch" type="xml">
+            <pivot string="Grade Analysis" display_quantity="true">
+                <field name="course_id" type="row"/>
+                <field name="exam_type" type="col"/>
+                <field name="percentage" type="measure"/>
+                <field name="obtained_score" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Grade Graph View -->
+    <record id="view_grade_graph" model="ir.ui.view">
+        <field name="name">school.grade.graph</field>
+        <field name="model">school.grade</field>
+        <field name="arch" type="xml">
+            <graph string="Grade Statistics" type="bar" sample="1">
+                <field name="exam_type"/>
+                <field name="percentage" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Grade Search View -->
+    <record id="view_grade_search" model="ir.ui.view">
+        <field name="name">school.grade.search</field>
+        <field name="model">school.grade</field>
+        <field name="arch" type="xml">
+            <search string="Search Grades">
+                <field name="student_id"/>
+                <field name="course_id"/>
+                <field name="teacher_id"/>
+                <field name="exam_type"/>
+                <field name="date"/>
+                <filter string="Passed" name="passed" domain="[('status','=','pass')]"/>
+                <filter string="Failed" name="failed" domain="[('status','=','fail')]"/>
+                <separator/>
+                <filter string="Quiz" name="quiz" domain="[('exam_type','=','quiz')]"/>
+                <filter string="Mid-term" name="midterm" domain="[('exam_type','=','midterm')]"/>
+                <filter string="Final Exam" name="final" domain="[('exam_type','=','final')]"/>
+                <filter string="Assignment" name="assignment" domain="[('exam_type','=','assignment')]"/>
+                <separator/>
+                <filter string="Grade A+" name="grade_a_plus" domain="[('grade','=','a_plus')]"/>
+                <filter string="Grade A" name="grade_a" domain="[('grade','=','a')]"/>
+                <filter string="Grade B" name="grade_b" domain="[('grade','in',['b_plus','b'])]"/>
+                <filter string="Grade C" name="grade_c" domain="[('grade','in',['c_plus','c'])]"/>
+                <filter string="Grade D or F" name="grade_d_f" domain="[('grade','in',['d','f'])]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Student" name="group_student" context="{'group_by':'student_id'}"/>
+                    <filter string="Course" name="group_course" context="{'group_by':'course_id'}"/>
+                    <filter string="Exam Type" name="group_exam_type" context="{'group_by':'exam_type'}"/>
+                    <filter string="Grade" name="group_grade" context="{'group_by':'grade'}"/>
+                    <filter string="Status" name="group_status" context="{'group_by':'status'}"/>
+                    <filter string="Date" name="group_date" context="{'group_by':'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Grade Action -->
+    <record id="action_grade" model="ir.actions.act_window">
+        <field name="name">Grades</field>
+        <field name="res_model">school.grade</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first grade record
+            </p>
+            <p>
+                Track student grades and exam results here.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item for Grades -->
+    <menuitem id="menu_school_grades"
+              name="Grades"
+              parent="menu_school_root"
+              action="action_grade"
+              sequence="60"/>
+</odoo>

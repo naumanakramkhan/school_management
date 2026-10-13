@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_school_course,access.school.course,model_school_course,base.group_user,1,1,1,1
+access_school_attendance,access.school.attendance,model_school_attendance,base.group_user,1,1,1,1
+access_school_grade,access.school.grade,model_school_grade,base.group_user,1,1,1,1
+access_school_dashboard,access.school.dashboard,model_school_dashboard,base.group_user,1,0,0,0
+access_student_fee,access.student.fee,model_student_fee,account.group_account_invoice,1,1,1,1
+access_student_fee_type_user,access.student.fee.type.user,model_student_fee_type,base.group_user,1,0,0,0
+access_student_fee_type_manager,access.student.fee.type.manager,model_student_fee_type,account.group_account_manager,1,1,1,1
+access_school_class,access.school.class,model_school_class,base.group_user,1,1,1,1
+access_school_attendance_wizard,access.school.attendance.wizard,model_school_attendance_wizard,base.group_user,1,1,1,1
+access_school_attendance_wizard_line,access.school.attendance.wizard.line,model_school_attendance_wizard_line,base.group_user,1,1,1,1

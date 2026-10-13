@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- ========== TEACHERS ========== -->
+        
+        <!-- Male Teachers -->
+        <record id="teacher_ahmed" model="res.partner">
+            <field name="name">Ahmed Hassan</field>
+            <field name="email">ahmed.hassan@school.com</field>
+            <field name="phone">01012345678</field>
+            <field name="teacher_qualification">Master's Degree</field>
+            <field name="teacher_subject">Mathematics</field>
+            <field name="teacher_experience_years">8</field>
+            <field name="is_teacher" eval="True"/>
+        </record>
+        
+        <record id="teacher_omar" model="res.partner">
+            <field name="name">Omar Khaled</field>
+            <field name="email">omar.khaled@school.com</field>
+            <field name="phone">01023456789</field>
+            <field name="teacher_qualification">Bachelor's Degree</field>
+            <field name="teacher_subject">Science</field>
+            <field name="teacher_experience_years">5</field>
+            <field name="is_teacher" eval="True"/>
+        </record>
+        
+        <!-- Female Teachers -->
+        <record id="teacher_fatima" model="res.partner">
+            <field name="name">Fatima Ali</field>
+            <field name="email">fatima.ali@school.com</field>
+            <field name="phone">01034567890</field>
+            <field name="teacher_qualification">Master's Degree</field>
+            <field name="teacher_subject">Arabic Language</field>
+            <field name="teacher_experience_years">10</field>
+            <field name="is_teacher" eval="True"/>
+        </record>
+        
+        <record id="teacher_maryam" model="res.partner">
+            <field name="name">Maryam Ibrahim</field>
+            <field name="email">maryam.ibrahim@school.com</field>
+            <field name="phone">01045678901</field>
+            <field name="teacher_qualification">Bachelor's Degree</field>
+            <field name="teacher_subject">English Language</field>
+            <field name="teacher_experience_years">6</field>
+            <field name="is_teacher" eval="True"/>
+        </record>
+        
+        <record id="teacher_aisha" model="res.partner">
+            <field name="name">Aisha Mohammed</field>
+            <field name="email">aisha.mohammed@school.com</field>
+            <field name="phone">01056789012</field>
+            <field name="teacher_qualification">PhD</field>
+            <field name="teacher_subject">History</field>
+            <field name="teacher_experience_years">12</field>
+            <field name="is_teacher" eval="True"/>
+        </record>
+        
+        <!-- ========== STUDENTS ========== -->
+        
+        <!-- Male Students -->
+        <record id="student_mohamed" model="res.partner">
+            <field name="name">Mohamed Samir</field>
+            <field name="email">mohamed.samir@student.com</field>
+            <field name="phone">01112345601</field>
+            <field name="student_dob">2010-03-15</field>
+            <field name="student_gender">male</field>
+            <field name="street">Cairo, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_youssef" model="res.partner">
+            <field name="name">Youssef Ahmed</field>
+            <field name="email">youssef.ahmed@student.com</field>
+            <field name="phone">01112345602</field>
+            <field name="student_dob">2010-05-20</field>
+            <field name="student_gender">male</field>
+            <field name="street">Alexandria, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_ali" model="res.partner">
+            <field name="name">Ali Mahmoud</field>
+            <field name="email">ali.mahmoud@student.com</field>
+            <field name="phone">01112345603</field>
+            <field name="student_dob">2010-07-10</field>
+            <field name="student_gender">male</field>
+            <field name="street">Giza, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_hassan" model="res.partner">
+            <field name="name">Hassan Tarek</field>
+            <field name="email">hassan.tarek@student.com</field>
+            <field name="phone">01112345604</field>
+            <field name="student_dob">2010-09-05</field>
+            <field name="student_gender">male</field>
+            <field name="street">Mansoura, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_karim" model="res.partner">
+            <field name="name">Karim Mostafa</field>
+            <field name="email">karim.mostafa@student.com</field>
+            <field name="phone">01112345605</field>
+            <field name="student_dob">2010-11-12</field>
+            <field name="student_gender">male</field>
+            <field name="street">Tanta, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_amr" model="res.partner">
+            <field name="name">Amr Waleed</field>
+            <field name="email">amr.waleed@student.com</field>
+            <field name="phone">01112345606</field>
+            <field name="student_dob">2010-02-18</field>
+            <field name="student_gender">male</field>
+            <field name="street">Aswan, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_abdullah" model="res.partner">
+            <field name="name">Abdullah Said</field>
+            <field name="email">abdullah.said@student.com</field>
+            <field name="phone">01112345607</field>
+            <field name="student_dob">2010-04-25</field>
+            <field name="student_gender">male</field>
+            <field name="street">Luxor, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_mahmoud" model="res.partner">
+            <field name="name">Mahmoud Essam</field>
+            <field name="email">mahmoud.essam@student.com</field>
+            <field name="phone">01112345608</field>
+            <field name="student_dob">2010-06-30</field>
+            <field name="student_gender">male</field>
+            <field name="street">Zagazig, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_hamza" model="res.partner">
+            <field name="name">Hamza Adel</field>
+            <field name="email">hamza.adel@student.com</field>
+            <field name="phone">01112345609</field>
+            <field name="student_dob">2010-08-22</field>
+            <field name="student_gender">male</field>
+            <field name="street">Ismailia, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_adam" model="res.partner">
+            <field name="name">Adam Hossam</field>
+            <field name="email">adam.hossam@student.com</field>
+            <field name="phone">01112345610</field>
+            <field name="student_dob">2010-10-08</field>
+            <field name="student_gender">male</field>
+            <field name="street">Suez, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <!-- Female Students -->
+        <record id="student_nour" model="res.partner">
+            <field name="name">Nour Hassan</field>
+            <field name="email">nour.hassan@student.com</field>
+            <field name="phone">01212345611</field>
+            <field name="student_dob">2010-01-14</field>
+            <field name="student_gender">female</field>
+            <field name="street">Cairo, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_salma" model="res.partner">
+            <field name="name">Salma Ahmed</field>
+            <field name="email">salma.ahmed@student.com</field>
+            <field name="phone">01212345612</field>
+            <field name="student_dob">2010-03-22</field>
+            <field name="student_gender">female</field>
+            <field name="street">Alexandria, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_hana" model="res.partner">
+            <field name="name">Hana Khaled</field>
+            <field name="email">hana.khaled@student.com</field>
+            <field name="phone">01212345613</field>
+            <field name="student_dob">2010-05-17</field>
+            <field name="student_gender">female</field>
+            <field name="street">Giza, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_layla" model="res.partner">
+            <field name="name">Layla Omar</field>
+            <field name="email">layla.omar@student.com</field>
+            <field name="phone">01212345614</field>
+            <field name="student_dob">2010-07-28</field>
+            <field name="student_gender">female</field>
+            <field name="street">Port Said, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_yasmin" model="res.partner">
+            <field name="name">Yasmin Ali</field>
+            <field name="email">yasmin.ali@student.com</field>
+            <field name="phone">01212345615</field>
+            <field name="student_dob">2010-09-11</field>
+            <field name="student_gender">female</field>
+            <field name="street">Damanhour, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_malak" model="res.partner">
+            <field name="name">Malak Ibrahim</field>
+            <field name="email">malak.ibrahim@student.com</field>
+            <field name="phone">01212345616</field>
+            <field name="student_dob">2010-11-05</field>
+            <field name="student_gender">female</field>
+            <field name="street">Minya, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_jana" model="res.partner">
+            <field name="name">Jana Youssef</field>
+            <field name="email">jana.youssef@student.com</field>
+            <field name="phone">01212345617</field>
+            <field name="student_dob">2010-02-09</field>
+            <field name="student_gender">female</field>
+            <field name="street">Sohag, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_rana" model="res.partner">
+            <field name="name">Rana Mohammed</field>
+            <field name="email">rana.mohammed@student.com</field>
+            <field name="phone">01212345618</field>
+            <field name="student_dob">2010-04-16</field>
+            <field name="student_gender">female</field>
+            <field name="street">Qena, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_sara" model="res.partner">
+            <field name="name">Sara Mahmoud</field>
+            <field name="email">sara.mahmoud@student.com</field>
+            <field name="phone">01212345619</field>
+            <field name="student_dob">2010-06-23</field>
+            <field name="student_gender">female</field>
+            <field name="street">Beni Suef, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <record id="student_mariam" model="res.partner">
+            <field name="name">Mariam Tarek</field>
+            <field name="email">mariam.tarek@student.com</field>
+            <field name="phone">01212345620</field>
+            <field name="student_dob">2010-08-19</field>
+            <field name="student_gender">female</field>
+            <field name="street">Fayoum, Egypt</field>
+            <field name="is_student" eval="True"/>
+        </record>
+        
+        <!-- ========== COURSES ========== -->
+        
+        <!-- Existing courses will be updated via ref, new ones created -->
+        
+        <record id="course_science" model="school.course">
+            <field name="name">Science</field>
+            <field name="description">General Science and Biology</field>
+            <field name="credits">4</field>
+            <field name="start_date">2024-09-01</field>
+            <field name="end_date">2025-06-30</field>
+            <field name="teacher_id" ref="teacher_omar"/>
+            <field name="student_ids" eval="[(6, 0, [ref('student_mohamed'), ref('student_youssef'), ref('student_ali'), ref('student_hassan'), ref('student_nour'), ref('student_salma'), ref('student_hana'), ref('student_layla')])]"/>
+        </record>
+        
+        <record id="course_english" model="school.course">
+            <field name="name">English Language</field>
+            <field name="description">English Grammar, Reading, and Writing</field>
+            <field name="credits">4</field>
+            <field name="start_date">2024-09-01</field>
+            <field name="end_date">2025-06-30</field>
+            <field name="teacher_id" ref="teacher_maryam"/>
+            <field name="student_ids" eval="[(6, 0, [ref('student_karim'), ref('student_amr'), ref('student_abdullah'), ref('student_mahmoud'), ref('student_yasmin'), ref('student_malak'), ref('student_jana'), ref('student_rana')])]"/>
+        </record>
+        
+        <record id="course_history" model="school.course">
+            <field name="name">History</field>
+            <field name="description">Egyptian and World History</field>
+            <field name="credits">3</field>
+            <field name="start_date">2024-09-01</field>
+            <field name="end_date">2025-06-30</field>
+            <field name="teacher_id" ref="teacher_aisha"/>
+            <field name="student_ids" eval="[(6, 0, [ref('student_hamza'), ref('student_adam'), ref('student_mohamed'), ref('student_ali'), ref('student_sara'), ref('student_mariam'), ref('student_nour'), ref('student_hana')])]"/>
+        </record>
+        
+        <record id="course_geography" model="school.course">
+            <field name="name">Geography</field>
+            <field name="description">Physical and Human Geography</field>
+            <field name="credits">3</field>
+            <field name="start_date">2024-09-01</field>
+            <field name="end_date">2025-06-30</field>
+            <field name="teacher_id" ref="teacher_ahmed"/>
+            <field name="student_ids" eval="[(6, 0, [ref('student_youssef'), ref('student_hassan'), ref('student_karim'), ref('student_abdullah'), ref('student_salma'), ref('student_layla'), ref('student_yasmin'), ref('student_jana')])]"/>
+        </record>
+        
+        <record id="course_computer" model="school.course">
+            <field name="name">Computer Science</field>
+            <field name="description">Programming and Computer Basics</field>
+            <field name="credits">3</field>
+            <field name="start_date">2024-09-01</field>
+            <field name="end_date">2025-06-30</field>
+            <field name="teacher_id" ref="teacher_omar"/>
+            <field name="student_ids" eval="[(6, 0, [ref('student_amr'), ref('student_mahmoud'), ref('student_hamza'), ref('student_adam'), ref('student_malak'), ref('student_rana'), ref('student_sara'), ref('student_mariam')])]"/>
+        </record>
+        
+        <record id="course_art" model="school.course">
+            <field name="name">Art Education</field>
+            <field name="description">Drawing, Painting, and Creative Arts</field>
+            <field name="credits">2</field>
+            <field name="start_date">2024-09-01</field>
+            <field name="end_date">2025-06-30</field>
+            <field name="teacher_id" ref="teacher_fatima"/>
+            <field name="student_ids" eval="[(6, 0, [ref('student_mohamed'), ref('student_karim'), ref('student_hassan'), ref('student_hamza'), ref('student_nour'), ref('student_yasmin'), ref('student_hana'), ref('student_mariam')])]"/>
+        </record>
+        
+        <!-- ========== ATTENDANCE RECORDS ========== -->
+        
+        <!-- Sample attendance for today and recent days -->
+        <record id="attendance_mohamed_science" model="school.attendance">
+            <field name="student_id" ref="student_mohamed"/>
+            <field name="course_id" ref="course_science"/>
+            <field name="date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="status">present</field>
+        </record>
+        
+        <record id="attendance_youssef_geography" model="school.attendance">
+            <field name="student_id" ref="student_youssef"/>
+            <field name="course_id" ref="course_geography"/>
+            <field name="date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="status">absent</field>
+        </record>
+        
+        <record id="attendance_ali_science" model="school.attendance">
+            <field name="student_id" ref="student_ali"/>
+            <field name="course_id" ref="course_science"/>
+            <field name="date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="status">present</field>
+        </record>
+        
+        <record id="attendance_nour_history" model="school.attendance">
+            <field name="student_id" ref="student_nour"/>
+            <field name="course_id" ref="course_history"/>
+            <field name="date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="status">present</field>
+        </record>
+        
+        <record id="attendance_salma_geography" model="school.attendance">
+            <field name="student_id" ref="student_salma"/>
+            <field name="course_id" ref="course_geography"/>
+            <field name="date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="status">present</field>
+        </record>
+        
+        <record id="attendance_hassan_science" model="school.attendance">
+            <field name="student_id" ref="student_hassan"/>
+            <field name="course_id" ref="course_science"/>
+            <field name="date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="status">present</field>
+        </record>
+        
+        <record id="attendance_layla_science" model="school.attendance">
+            <field name="student_id" ref="student_layla"/>
+            <field name="course_id" ref="course_science"/>
+            <field name="date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="status">late</field>
+        </record>
+        
+        <!-- ========== GRADES ========== -->
+        
+        <!-- Sample grades for students -->
+        <record id="grade_mohamed_science_mid" model="school.grade">
+            <field name="student_id" ref="student_mohamed"/>
+            <field name="course_id" ref="course_science"/>
+            <field name="exam_type">midterm</field>
+            <field name="max_score">50</field>
+            <field name="obtained_score">42</field>
+        </record>
+        
+        <record id="grade_mohamed_science_final" model="school.grade">
+            <field name="student_id" ref="student_mohamed"/>
+            <field name="course_id" ref="course_science"/>
+            <field name="exam_type">final</field>
+            <field name="max_score">100</field>
+            <field name="obtained_score">85</field>
+        </record>
+        
+        <record id="grade_nour_english_mid" model="school.grade">
+            <field name="student_id" ref="student_nour"/>
+            <field name="course_id" ref="course_english"/>
+            <field name="exam_type">midterm</field>
+            <field name="max_score">50</field>
+            <field name="obtained_score">48</field>
+        </record>
+        
+        <record id="grade_nour_english_final" model="school.grade">
+            <field name="student_id" ref="student_nour"/>
+            <field name="course_id" ref="course_english"/>
+            <field name="exam_type">final</field>
+            <field name="max_score">100</field>
+            <field name="obtained_score">92</field>
+        </record>
+        
+        <record id="grade_ali_history_quiz" model="school.grade">
+            <field name="student_id" ref="student_ali"/>
+            <field name="course_id" ref="course_history"/>
+            <field name="exam_type">quiz</field>
+            <field name="max_score">20</field>
+            <field name="obtained_score">16</field>
+        </record>
+        
+        <record id="grade_salma_geography_mid" model="school.grade">
+            <field name="student_id" ref="student_salma"/>
+            <field name="course_id" ref="course_geography"/>
+            <field name="exam_type">midterm</field>
+            <field name="max_score">50</field>
+            <field name="obtained_score">45</field>
+        </record>
+        
+        <record id="grade_hamza_computer_final" model="school.grade">
+            <field name="student_id" ref="student_hamza"/>
+            <field name="course_id" ref="course_computer"/>
+            <field name="exam_type">final</field>
+            <field name="max_score">100</field>
+            <field name="obtained_score">78</field>
+        </record>
+        
+        <record id="grade_mariam_art_quiz" model="school.grade">
+            <field name="student_id" ref="student_mariam"/>
+            <field name="course_id" ref="course_art"/>
+            <field name="exam_type">quiz</field>
+            <field name="max_score">20</field>
+            <field name="obtained_score">18</field>
+        </record>
+        
+    </data>
+</odoo>
